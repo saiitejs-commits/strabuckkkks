@@ -3,174 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strabuckkkks | Sun-Drenched Solarium</title>
+<title>Strabuckkkks</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-html {
-  scroll-behavior:smooth;
-}
-
-body {
+body{
   font-family:'Inter', sans-serif;
   background:#F5F5DC;
-  color:#2e2e2e;
+  color:#1d1d1f;
   overflow-x:hidden;
 }
 
 /* NAVBAR */
-nav {
+nav{
   position:fixed;
-  width:100%;
   top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 60px;
-  backdrop-filter:blur(15px);
-  background:rgba(245,245,220,0.7);
+  padding:25px 80px;
+  backdrop-filter:blur(20px);
+  background:rgba(245,245,220,0.65);
   z-index:1000;
 }
 
-.logo {
+.logo{
   font-family:'Playfair Display', serif;
-  font-size:26px;
+  font-size:24px;
   color:#B2AC88;
 }
 
-nav a {
+nav a{
   text-decoration:none;
-  margin-left:30px;
-  color:#B2AC88;
-  font-weight:500;
+  margin-left:40px;
+  color:#6e6e73;
+  font-weight:400;
   transition:0.3s;
 }
 
-nav a:hover {
-  opacity:0.6;
+nav a:hover{
+  color:#1d1d1f;
 }
 
-.cta {
+.cta{
   background:#E2725B;
   color:white;
-  padding:10px 22px;
-  border-radius:30px;
+  padding:10px 25px;
+  border-radius:40px;
 }
 
 /* HERO */
-.hero {
+.hero{
   height:100vh;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  padding:0 80px;
+  justify-content:center;
+  text-align:center;
+  flex-direction:column;
+  padding:0 20px;
 }
 
-.hero-text {
-  max-width:600px;
-}
-
-.hero h1 {
+.hero h1{
   font-family:'Playfair Display', serif;
-  font-size:64px;
-  line-height:1.1;
+  font-size:72px;
+  line-height:1.05;
+  max-width:900px;
   color:#B2AC88;
+  animation:fadeUp 1.2s ease forwards;
 }
 
-.hero p {
-  margin-top:25px;
-  font-size:18px;
-  opacity:0.8;
+.hero p{
+  margin-top:30px;
+  font-size:20px;
+  color:#6e6e73;
+  max-width:600px;
+  animation:fadeUp 1.6s ease forwards;
 }
 
-.hero img {
-  width:500px;
+.hero img{
+  margin-top:60px;
+  width:550px;
   border-radius:30px;
-  box-shadow:0 30px 60px rgba(0,0,0,0.1);
+  animation:fadeUp 2s ease forwards;
   transition:0.5s;
 }
 
-.hero img:hover {
-  transform:scale(1.03);
+.hero img:hover{
+  transform:scale(1.02);
 }
 
 /* SECTION */
-.section {
-  padding:120px 80px;
+.section{
+  padding:160px 80px;
+  text-align:center;
 }
 
-.section h2 {
+.section h2{
   font-family:'Playfair Display', serif;
-  font-size:40px;
-  margin-bottom:60px;
+  font-size:48px;
+  margin-bottom:80px;
   color:#B2AC88;
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
+.menu-item{
+  margin-bottom:60px;
 }
 
-.card {
-  background:white;
-  padding:30px;
-  border-radius:25px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.06);
-  transition:0.4s;
+.menu-item h3{
+  font-size:28px;
+  font-weight:500;
 }
 
-.card:hover {
-  transform:translateY(-10px);
+.menu-item p{
+  margin-top:10px;
+  color:#6e6e73;
 }
 
-.card h3 {
-  font-family:'Playfair Display', serif;
-  margin-bottom:10px;
-}
-
-.price {
-  margin-top:15px;
+.price{
+  margin-top:10px;
   color:#E2725B;
-  font-weight:600;
-}
-
-button {
-  margin-top:20px;
-  background:#E2725B;
-  border:none;
-  padding:10px 20px;
-  border-radius:30px;
-  color:white;
-  cursor:pointer;
+  font-weight:500;
 }
 
 /* CART */
-.cart {
+.cart{
   position:fixed;
-  bottom:30px;
-  right:30px;
+  bottom:40px;
+  right:40px;
   background:#E2725B;
   color:white;
-  padding:15px 25px;
-  border-radius:40px;
-  font-weight:600;
-  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  padding:15px 30px;
+  border-radius:50px;
+  font-weight:500;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
-footer {
-  background:#B2AC88;
-  color:white;
+footer{
+  padding:100px;
   text-align:center;
-  padding:60px;
+  color:#6e6e73;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
@@ -181,68 +164,48 @@ footer {
   <div class="logo">Strabuckkkks</div>
   <div>
     <a href="#menu">Menu</a>
-    <a href="#shop">Shop</a>
     <a href="#location">Location</a>
-    <a class="cta" href="#menu">Order Pickup</a>
+    <a class="cta" href="#menu">Order</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-text">
-    <h1>Slow Mornings,<br>Sun-Drenched Stays.</h1>
-    <p>Organic roasts and botanical luxury in the heart of Frisco, TX.</p>
-  </div>
+  <h1>Slow Mornings.<br>Sun-Drenched Stays.</h1>
+  <p>Organic roasts and botanical luxury in the heart of Frisco, Texas.</p>
   <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
 </section>
 
 <section class="section" id="menu">
   <h2>The Daily Ritual</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Lavender Oat Latte</h3>
-      <p>Floral lavender syrup layered over velvety oat espresso.</p>
-      <div class="price">$6.50</div>
-      <button onclick="addToCart(6.5)">Add to Cart</button>
-    </div>
 
-    <div class="card">
-      <h3>Solarium Espresso</h3>
-      <p>Deep caramel body with radiant citrus finish.</p>
-      <div class="price">$4.25</div>
-      <button onclick="addToCart(4.25)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <h3>Botanical Croissant</h3>
-      <p>Butter-laminated pastry baked at sunrise.</p>
-      <div class="price">$5.00</div>
-      <button onclick="addToCart(5)">Add to Cart</button>
-    </div>
+  <div class="menu-item">
+    <h3>Lavender Oat Latte</h3>
+    <p>Floral lavender layered over velvety oat espresso.</p>
+    <div class="price">$6.50</div>
   </div>
-</section>
 
-<section class="section" id="shop">
-  <h2>The Pantry</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Solarium House Blend</h3>
-      <p>Whole Bean / Ground – Single Origin.</p>
-      <div class="price">$18.00</div>
-      <button onclick="addToCart(18)">Add to Cart</button>
-    </div>
+  <div class="menu-item">
+    <h3>Solarium Espresso</h3>
+    <p>Deep caramel body with radiant citrus finish.</p>
+    <div class="price">$4.25</div>
+  </div>
+
+  <div class="menu-item">
+    <h3>Botanical Croissant</h3>
+    <p>Butter-laminated pastry baked at sunrise.</p>
+    <div class="price">$5.00</div>
   </div>
 </section>
 
 <section class="section" id="location">
   <h2>Frisco, Texas</h2>
-  <iframe width="100%" height="350"
+  <iframe width="100%" height="400"
   src="https://maps.google.com/maps?q=frisco,tx&t=&z=13&ie=UTF8&iwloc=&output=embed">
   </iframe>
 </section>
 
 <footer>
-  <h3>Join The Conservatory</h3>
-  <p>Seasonal drops. Private tastings. Botanical moments.</p>
+  Crafted for calm mornings and golden light.
 </footer>
 
 <div class="cart" id="cart">
@@ -251,7 +214,6 @@ footer {
 
 <script>
 let total = 0;
-
 function addToCart(price){
   total += price;
   document.getElementById("cart").innerHTML =
