@@ -1,28 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Strabuckkkks</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strabuckkkks | Frisco TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
-  font-family: Arial;
-  background:#F5F5DC;
-  text-align:center;
   margin:0;
-}
-nav {
+  font-family:'Inter', sans-serif;
   background:#F5F5DC;
-  padding:15px;
-  font-size:20px;
+  color:#333;
 }
+
+nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#F5F5DC;
+  position:sticky;
+  top:0;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav a {
+  text-decoration:none;
+  margin-left:20px;
+  color:#B2AC88;
+  font-weight:600;
+}
+
+.cta {
+  background:#E2725B;
+  padding:10px 20px;
+  border-radius:25px;
+  color:white;
+}
+
 .hero {
-  padding:60px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 40px;
 }
+
+.hero img {
+  width:450px;
+  border-radius:20px;
+}
+
+h1 {
+  font-family:'Playfair Display', serif;
+  font-size:48px;
+  color:#B2AC88;
+}
+
+.section {
+  padding:60px 40px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card {
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+}
+
+.price {
+  color:#E2725B;
+  font-weight:700;
+  margin-top:10px;
+}
+
 button {
   background:#E2725B;
-  color:white;
-  padding:10px 20px;
   border:none;
+  padding:8px 15px;
   border-radius:20px;
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+footer {
+  background:#B2AC88;
+  color:white;
+  padding:40px;
+  text-align:center;
+}
+
+.cart-box {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#E2725B;
+  color:white;
+  padding:15px 20px;
+  border-radius:30px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -30,14 +119,91 @@ button {
 <body>
 
 <nav>
-  <b>Strabuckkkks</b>
+  <div style="font-family:'Playfair Display'; font-size:24px; color:#B2AC88;">
+    Strabuckkkks
+  </div>
+  <div>
+    <a href="#menu">Menu</a>
+    <a href="#shop">Shop</a>
+    <a href="#locations">Locations</a>
+    <a class="cta" href="#menu">Order Pickup</a>
+  </div>
 </nav>
 
-<div class="hero">
-  <h1>Slow Mornings, Sun-Drenched Stays.</h1>
-  <p>Organic roasts in the heart of Frisco, TX.</p>
-  <button>Add to Cart</button>
+<section class="hero">
+  <div>
+    <h1>Slow Mornings,<br>Sun-Drenched Stays.</h1>
+    <p>Organic roasts and botanical vibes in the heart of Frisco, TX.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+</section>
+
+<section class="section" id="menu">
+  <h2 style="font-family:'Playfair Display'; color:#B2AC88;">The Daily Ritual</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Lavender Oat Latte</h3>
+      <p>Floral lavender syrup swirled into creamy oat milk espresso.</p>
+      <div class="price">$6.50</div>
+      <button onclick="addToCart(6.5)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <h3>Solarium Espresso</h3>
+      <p>Deep caramel body with citrus brightness.</p>
+      <div class="price">$4.25</div>
+      <button onclick="addToCart(4.25)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <h3>Botanical Croissant</h3>
+      <p>Flaky butter-laminated pastry baked fresh at 6 AM.</p>
+      <div class="price">$5.00</div>
+      <button onclick="addToCart(5)">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <h2 style="font-family:'Playfair Display'; color:#B2AC88;">Shop Beans</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Solarium House Blend</h3>
+      <p>Whole Bean / Ground</p>
+      <div class="price">$18.00</div>
+      <button onclick="addToCart(18)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="locations">
+  <h2 style="font-family:'Playfair Display'; color:#B2AC88;">Frisco, TX</h2>
+  <p>Open Daily 6AM – 6PM</p>
+  <iframe width="100%" height="300" 
+  src="https://maps.google.com/maps?q=frisco,tx&t=&z=13&ie=UTF8&iwloc=&output=embed">
+  </iframe>
+</section>
+
+<footer>
+  <h3>Join the Conservatory</h3>
+  <p>Subscribe for seasonal brews & offers.</p>
+</footer>
+
+<div class="cart-box" id="cart">
+  🛒 Cart: $0.00
 </div>
+
+<script>
+let total = 0;
+
+function addToCart(price){
+  total += price;
+  document.getElementById("cart").innerHTML =
+    "🛒 Cart: $" + total.toFixed(2);
+}
+</script>
 
 </body>
 </html>
